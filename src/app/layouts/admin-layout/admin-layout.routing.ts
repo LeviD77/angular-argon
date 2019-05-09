@@ -8,14 +8,20 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { CanActivateViaAuthGuard } from 'src/app/guards/login-guard';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard', component: DashboardComponent },
+    {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [
+            CanActivateViaAuthGuard
+        ]
+    },
     { path: 'user-profile',   component: UserProfileComponent },
     {
         path: 'tables',
         component: TablesComponent,
         canActivate: [
             CanActivateViaAuthGuard
-        ] 
+        ]
     },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent }
