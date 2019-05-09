@@ -15,7 +15,13 @@ export const AdminLayoutRoutes: Routes = [
             CanActivateViaAuthGuard
         ]
     },
-    { path: 'user-profile',   component: UserProfileComponent },
+    {
+        path: 'user-profile',
+        component: UserProfileComponent,
+        canActivate: [
+            CanActivateViaAuthGuard
+        ]
+    },
     {
         path: 'tables',
         component: TablesComponent,
@@ -23,6 +29,18 @@ export const AdminLayoutRoutes: Routes = [
             CanActivateViaAuthGuard
         ]
     },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent }
+    {
+        path: 'icons',
+        component: IconsComponent,
+        canActivate: [
+            CanActivateViaAuthGuard
+        ]
+    },
+    {
+        path: 'maps',
+        component: MapsComponent,
+        canActivate: [
+            CanActivateViaAuthGuard
+        ]
+    }
 ];
